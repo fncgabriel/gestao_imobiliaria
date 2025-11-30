@@ -93,9 +93,9 @@ Execute no editor SQL:
 ### 3️⃣ Verificar se os dados foram inseridos
 
 ```sql
-SELECT * FROM Cliente;
-SELECT * FROM Imovel;
-SELECT * FROM Contrato
+SELECT * FROM cliente;
+SELECT * FROM imovel;
+SELECT * FROM contrato
 ```
 🔍 Exemplos de Consultas SQL (SELECT)
 
@@ -103,14 +103,14 @@ SELECT * FROM Contrato
 ```sql
 Copiar código
 SELECT nome, tipo_cliente
-FROM Cliente
+FROM cliente
 WHERE tipo_cliente = 'proprietario';
 ```
 ▶ 2. Imóveis ordenados por valor
 ```sql
 Copiar código
 SELECT endereco, cidade, valor
-FROM Imovel
+FROM imovel
 ORDER BY valor DESC
 LIMIT 5;
 ```
@@ -122,24 +122,24 @@ SELECT
     c.nome AS cliente,
     i.endereco AS imovel,
     co.nome AS corretor
-FROM Visita v
-JOIN Cliente c  ON c.id_cliente = v.id_cliente
-JOIN Imovel i   ON i.id_imovel = v.id_imovel
-JOIN Corretor co ON co.id_corretor = v.id_corretor
+FROM visita v
+JOIN cliente c  ON c.id_cliente = v.id_cliente
+JOIN imovel i   ON i.id_imovel = v.id_imovel
+JOIN corretor co ON co.id_corretor = v.id_corretor
 ORDER BY v.data_visita DESC;
 ```
 ✏️ Exemplos de UPDATE e DELETE
 ▶ UPDATE — alterar status de um imóvel
 ```sql
 Copiar código
-UPDATE Imovel
+UPDATE imovel
 SET status = 'vendido'
 WHERE id_imovel = 1;
 ```
 ▶ UPDATE — corrigir telefone de cliente
 ```sql
 Copiar código
-UPDATE Cliente
+UPDATE cliente
 SET telefone = '51999999999'
 WHERE id_cliente = 3;
 ```
@@ -151,10 +151,20 @@ WHERE id_visita = 4;
 ```
 <h2><strong>🛠️ Tecnologias Utilizadas</strong></h2>
 
-- **SQLite 3**
-- **SQLiteStudio 3.4.17**
-- **SQL (DDL e DML)**
-- **Git & GitHub**
+## 🛠️ Tecnologias Utilizadas
+
+### **SQLite 3**
+Sistema de banco de dados utilizado para armazenar e gerenciar todas as tabelas, dados e relacionamentos.
+
+### **SQLiteStudio 3.4.17**
+Ferramenta visual utilizada para manipular o banco: executar scripts SQL, visualizar dados e testar consultas.
+
+### **SQL (DDL e DML)**
+- **DDL:** criação da estrutura do banco (`CREATE TABLE`, PK, FK...)  
+- **DML:** manipulação de dados (`INSERT`, `SELECT`, `UPDATE`, `DELETE`)
+
+### **Git & GitHub**
+Usados para versionamento, armazenamento do repositório e entrega da atividade acadêmica.
 
 ---
 
